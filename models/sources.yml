@@ -10,3 +10,11 @@ sources:
         description: one record per customer
       - name: orders
         description: one record per order includes cancelled and deleted
+
+  - name: stripe
+    description: Stripe payment log
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        description: records for payments with method, payment id and orderid as reference 
