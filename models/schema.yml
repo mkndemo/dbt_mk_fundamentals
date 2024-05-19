@@ -5,7 +5,7 @@ models:
     - name: customers_with_orders
       description: "Customers with orders info"
       columns:
-          - name: id
+          - name: customer_id
             description: "The primary key for this table"
             tests:
                 - unique
