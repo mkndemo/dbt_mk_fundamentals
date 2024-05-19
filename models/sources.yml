@@ -7,7 +7,13 @@ sources:
     schema: jaffle_shop
     tables:
       - name: customers
-        description: one record per customer
+        description: raw customer data
+        columns:
+          - name: id
+            description: this is the primary key of the customer
+            tests:
+              - unique
+              - not_null
       - name: orders
         freshness: 
           error_after:
@@ -17,7 +23,7 @@ sources:
             count: 1
             period: day
         loaded_at_field: _ETL_LOADED_AT
-        description: one record per order includes cancelled and deleted
+        description: oraw order data
 
   - name: stripe
     description: Stripe payment log
