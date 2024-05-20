@@ -6,7 +6,7 @@ models:
     columns:
       - name: customer_id
         description: The unique key for each customer.
-        tests:
+        data_tests:
           - not_null
           - unique
 
@@ -15,7 +15,7 @@ models:
     columns:
       - name: order_item_id
         description: The unique key for each order item.
-        tests:
+        data_tests:
           - not_null
           - unique
 
@@ -24,7 +24,7 @@ models:
     columns:
       - name: order_id
         description: The unique key for each order.
-        tests:
+        data_tests:
           - not_null
           - unique
 
@@ -33,7 +33,7 @@ models:
     columns:
       - name: product_id
         description: The unique key for each product.
-        tests:
+        data_tests:
           - not_null
           - unique
 
@@ -45,6 +45,6 @@ models:
     columns:
       - name: supply_uuid
         description: The unique key of our supplies per cost.
-        tests:
+        data_tests:
           - not_null
           - unique
