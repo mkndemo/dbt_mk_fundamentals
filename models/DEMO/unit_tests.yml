@@ -1,0 +1,17 @@
+unit_tests:
+  - name: test_is_gold_or_normal_customer
+    description: "Check customer type correctly assigned"
+    model: dim_customers_demo
+    given:
+      - input: ref('stg_customers_demo')
+        rows:
+          - { total_order_value: 60 }
+          - { total_order_value: 74 }
+          - { total_order_value: 75 }
+          - { total_order_value: 1000 }
+    expect:
+      rows:
+        - { total_order_value: 60, customer_type: normal }
+        - { total_order_value: 74, customer_type: normal }
+        - { total_order_value: 75, customer_type: gold }
+        - { total_order_value: 1000, customer_type: gold }
