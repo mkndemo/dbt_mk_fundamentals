@@ -1,9 +1,9 @@
 unit_tests:
   - name: test_is_gold_or_normal_customer
     description: "Check customer type correctly assigned"
-    model: dim_customers_demo
+    model: dim_customers_tmp
     given:
-      - input: ref('stg_customers_demo')
+      - input: ref('stg_customers_tmp')
         rows:
           - { total_order_value: 60 }
           - { total_order_value: 74 }
