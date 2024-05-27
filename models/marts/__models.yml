@@ -69,3 +69,16 @@ models:
         description: A boolean indicating if this order included any food items.
       - name: is_drink_order
         description: A boolean indicating if this order included any drink items.
+
+
+exposures:
+  - name: finance_dashboard
+    type: dashboard
+    owner:
+      name: MKN
+      email: max.knutsson@dbtlabs.com
+    depends_on:
+      - metric('customers_with_orders')
+    description: Monthly sales for finance team
+    url: https://looker.company.com/dashboards/123
+    maturity: high
