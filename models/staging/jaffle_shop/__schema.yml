@@ -2,17 +2,17 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    database: raw
-    schema: jaffle_shop
+    database: analytics
+    schema: raw_jaffle_shop
     tables:
-      - name: customers
-      - name: orders
-      - name: items
-      - name: products
-      - name: supplies 
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_items
+      - name: raw_products
+      - name: raw_supplies 
   - name: stripe
     description: Stripe payment log
-    database: raw
+    database: analytics
     freshness: 
       error_after:
         count: 2
@@ -21,7 +21,7 @@ sources:
         count: 1
         period: day
     loaded_at_field: _BATCHED_AT
-    schema: stripe
+    schema: raw_stripe
     tables:
-      - name: payment
+      - name: raw_payment
         description: records for payments with method, payment id and orderid as reference 
