@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: snowplow
+    database: analytics
+    schema: snowplow_external
+    loader: ADLSblob
+    loaded_at_field: collector_hour
+    
+    tables:
+      - name: event_ext_tbl
+        description: "External table of Snowplow events stored as JSON files"
+        external:
+          location: "@raw_stage.PUBLIC.stg"
+          file_format: "( type = json )"      
+          auto_refresh: true
+  
