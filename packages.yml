@@ -6,3 +6,5 @@ packages:
     # <see https://github.com/calogica/dbt-date/releases/latest> for the latest version tag
   - package: dbt-labs/dbt_external_tables
     version: 0.9.0
+  - package: dbt-labs/audit_helper
+    version: 0.11.0
