@@ -11,7 +11,7 @@ jobs:
     env:
       SNOWFLAKE_ACCOUNT: cb11892.west-europe.azure
       SNOWFLAKE_USER: 92736ah3AG
-      SNOWFLAKE_PASSWORD: Su736lkabo4A!5h
+      SNOWFLAKE_PASSWORD: ${{ secrets.PASSWORD }}
       SNOWFLAKE_ROLE: accountadmin
       SNOWFLAKE_SCHEMA: staging
 
