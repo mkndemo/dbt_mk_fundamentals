@@ -35,6 +35,3 @@ jobs:
 
       - name: Run pre-commit checks
         run: pre-commit run --all-files 
-
-      - name: Lint models
-        run: sqlfluff lint models
