@@ -1,4 +1,4 @@
-jaffle_shop_learning:
+default:
   target: dev
   outputs:
     dev:
