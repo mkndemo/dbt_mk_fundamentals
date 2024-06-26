@@ -1,0 +1,10 @@
+repos:
+- repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+  rev: v1.2.1
+  hooks:
+  - id: dbt-docs-generate
+  - id: check-model-columns-have-desc
+    files: ^models
+  - id: check-model-has-tests
+    name: Check that all models have tests
+    files: ^models/

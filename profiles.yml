@@ -1,0 +1,17 @@
+jaffle_shop_learning:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: cb11892.west-europe.azure
+
+      # User/password auth
+      user: 92736ah3AG
+      password: "{{ env_var('DBT_SF_PASSWORD') }}"
+
+      role: accountadmin
+      database: analytics
+      warehouse: transforming
+      schema: staging
+      threads: 1
+      client_session_keep_alive: False

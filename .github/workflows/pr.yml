@@ -1,0 +1,37 @@
+name: dbt-checkpoint
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  dbt-checkpoint:
+    runs-on: ubuntu-latest
+    env:
+      ACCOUNT: cb11892.west-europe.azure
+      DATABASE: analytics
+      SCHEMA: prod
+      USER: 92736ah3AG
+      PASSWORD: ${{ secrets.DBT_SF_PASSWORD }}
+      ROLE: accountadmin
+      WAREHOUSE: transforming
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+
+      - id: Get file changes
+        uses: trilom/file-changes-action@v1.2.4
+        with:
+          output: " "
+
+      - name: Run dbt checkpoint
+        uses: dbt-checkpoint/action@v0.1
+        with:
+          extra_args: --files ${{ steps.get_file_changes.outputs.files}}
+          dbt_version: 1.6.3
+          dbt_adapter: dbt-snowflake
