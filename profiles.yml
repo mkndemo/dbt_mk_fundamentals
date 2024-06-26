@@ -4,11 +4,9 @@ jaffle_shop_learning:
     dev:
       type: snowflake
       account: cb11892.west-europe.azure
-
       # User/password auth
       user: 92736ah3AG
-      password: "{{ env_var('DBT_SF_PASSWORD') }}"
-
+      password: ${{ secrets.DBT_SF_PASSWORD }}
       role: accountadmin
       database: analytics
       warehouse: transforming
