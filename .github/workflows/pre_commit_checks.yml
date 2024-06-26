@@ -13,7 +13,7 @@ jobs:
       SNOWFLAKE_USER: 92736ah3AG
       SNOWFLAKE_PASSWORD: ${{ secrets.DBT_SF_PASSWORD }}
       SNOWFLAKE_ROLE: accountadmin
-      SNOWFLAKE_SCHEMA: analytics
+      SNOWFLAKE_SCHEMA: staging
 
     steps:
       - name: Checkout Code
