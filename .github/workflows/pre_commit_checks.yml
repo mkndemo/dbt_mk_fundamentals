@@ -15,7 +15,7 @@ jobs:
       USER: ${{ vars.USER }}
       PASSWORD: ${{ secrets.DB_PASSWORD }}
       ROLE: ${{ vars.ROLE }}
-      WAREHOUSE: ${{ vars.WAREHOUSE }}
+      WAREHOUSE: ${{ vars.WAREHOUSE }} 
 
     steps:
       - name: Checkout Code
