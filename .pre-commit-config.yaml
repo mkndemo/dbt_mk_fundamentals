@@ -6,4 +6,4 @@ repos:
   - id: check-model-has-tests-by-name
     name: Check that marketing marts have primary key tests
     files: ^models/marts/marketing/
-    args: ["--tests", "unique=1", "data=1", "--"]
+    args: ["--tests", "unique=1", "data_tests=1", "--"]
