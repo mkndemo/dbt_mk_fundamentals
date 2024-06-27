@@ -29,15 +29,11 @@ jobs:
       - name: Install requirements
         run: pip install dbt-snowflake pre-commit
 
-      - name: Install requirements
-        id: get_file_changes
-        uses: trilom/file-changes-action@v1.2.4
-        with:
-          output: " "
+      - name: Install dbt dependencies
+        run: dbt deps
 
-      - name: Run dbt checkpoint
-        uses: dbt-checkpoint/action@v0.1
-        with:
-          extra_args: --files ${{ steps.get_file_changes.outputs.files}}
-          dbt_version: 1.6.3
-          dbt_adapter: dbt-snowflake
+      - name: dbt build
+        run: dbt build --full-refresh --profiles-dir ./
+
+      - name: Run pre-commit checks
+        run: pre-commit run --all-files 
