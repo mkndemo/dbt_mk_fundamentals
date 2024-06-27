@@ -17,6 +17,7 @@ jobs:
       ROLE: ${{ vars.ROLE }}
       WAREHOUSE: ${{ vars.WAREHOUSE }} 
 
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3 # Updated to v3
