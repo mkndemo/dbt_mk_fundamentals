@@ -6,7 +6,7 @@ default:
       account: cb11892.west-europe.azure
       # User/password auth
       user: 92736ah3AG
-      password: test
+      password: "{{ env_var('PASSWORD') }}"
       role: accountadmin
       database: analytics
       warehouse: transforming

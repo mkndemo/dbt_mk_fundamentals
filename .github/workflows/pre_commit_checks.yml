@@ -33,7 +33,7 @@ jobs:
         run: dbt deps
 
       - name: dbt build
-        run: dbt build --full-refresh --profiles-dir ./
+        run: dbt docs generate
 
       - name: Run pre-commit checks
         run: pre-commit run --all-files 
