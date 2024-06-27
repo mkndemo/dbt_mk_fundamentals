@@ -33,8 +33,5 @@ jobs:
       - name: Install dbt dependencies
         run: dbt deps
 
-#      - name: dbt build
-#        run: dbt docs generate
-
       - name: Run pre-commit checks
         run: pre-commit run --all-files 
