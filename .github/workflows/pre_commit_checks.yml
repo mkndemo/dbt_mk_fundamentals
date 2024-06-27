@@ -13,7 +13,7 @@ jobs:
       DATABASE: ${{ vars.DATABASE }}
       SCHEMA: ${{ vars.SCHEMA }}
       USER: ${{ vars.USER }}
-      PASSWORD: ${{ secrets.PASSWORD }}
+      PASSWORD: ${{ secrets.PASSWORDSF }}
       ROLE: ${{ vars.ROLE }}
       WAREHOUSE: ${{ vars.WAREHOUSE }} 
 
