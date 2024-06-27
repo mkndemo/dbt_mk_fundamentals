@@ -1,6 +1,15 @@
 version: 2
 
 models:
+  - name: order_items
+    description: Order items table
+    columns:
+      - name: order_item_id
+        description: Order item id is primary key for the order_items
+        data_tests:
+          - not_null
+          - unique
+
   - name: dim_customers
     description: Customer overview data mart, offering key details for each unique customer. One row per customer.
     columns:
