@@ -1,4 +1,4 @@
-jaffle_shop_learning:
+default:
   target: dev
   outputs:
     dev:
@@ -6,7 +6,7 @@ jaffle_shop_learning:
       account: cb11892.west-europe.azure
       # User/password auth
       user: 92736ah3AG
-      password: ${{ secrets.DBT_SF_PASSWORD }}
+      password: "{{ env_var('PASSWORD') }}"
       role: accountadmin
       database: analytics
       warehouse: transforming
