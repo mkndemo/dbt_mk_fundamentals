@@ -8,12 +8,14 @@ on:
 jobs:
   dbt_ci:
     runs-on: ubuntu-latest
-    env:
-      SNOWFLAKE_ACCOUNT: cb11892.west-europe.azure
-      SNOWFLAKE_USER: 92736ah3AG
-      SNOWFLAKE_PASSWORD: ${{ secrets.PASSWORD }}
-      SNOWFLAKE_ROLE: accountadmin
-      SNOWFLAKE_SCHEMA: staging
+    env:      
+      ACCOUNT: ${{ vars.ACCOUNT }}
+      DATABASE: ${{ vars.DATABASE }}
+      SCHEMA: ${{ vars.SCHEMA }}
+      USER: ${{ vars.USER }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      ROLE: ${{ vars.ROLE }}
+      WAREHOUSE: ${{ vars.WAREHOUSE }}
 
     steps:
       - name: Checkout Code
@@ -26,6 +28,12 @@ jobs:
 
       - name: Install requirements
         run: pip install dbt-snowflake pre-commit
+
+      - name: Get changed files
+        id: get_file_changes
+        uses: trilom/file-changes-action@v1.2.4
+        with:
+          output: " "
 
       - name: Install dbt dependencies
         run: dbt deps
