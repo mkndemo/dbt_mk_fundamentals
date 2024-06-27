@@ -4,7 +4,7 @@ repos:
   hooks:
   - id: dbt-docs-generate
   - id: check-model-columns-have-desc
-    files: ^models
+    files: ^models/
   - id: check-model-has-tests
     name: Check that all models have tests
     files: ^models/
