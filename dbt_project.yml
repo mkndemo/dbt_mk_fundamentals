@@ -23,6 +23,10 @@ clean-targets: # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+vars:
+  dbt_project_evaluator:
+  primary_key_test_macros: [["dbt.test_unique", "dbt.test_not_null"]]
+
 models:
   jaffle_shop_learning:
     marts:
