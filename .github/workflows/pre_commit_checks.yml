@@ -13,9 +13,10 @@ jobs:
       DATABASE: ${{ vars.DATABASE }}
       SCHEMA: ${{ vars.SCHEMA }}
       USER: ${{ vars.USER }}
-      PASSWORD: ${{ secrets.DB_PASSWORD }}
+      PASSWORD: ${{ secrets.PASSWORD }}
       ROLE: ${{ vars.ROLE }}
       WAREHOUSE: ${{ vars.WAREHOUSE }} 
+
 
     steps:
       - name: Checkout Code
@@ -31,9 +32,6 @@ jobs:
 
       - name: Install dbt dependencies
         run: dbt deps
-
-#      - name: dbt build
-#        run: dbt docs generate
 
       - name: Run pre-commit checks
         run: pre-commit run --all-files 

@@ -23,9 +23,13 @@ clean-targets: # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
+
 models:
   jaffle_shop_learning:
     marts:
       +materialized: table
     staging:
       +materialized: table
+  dbt_project_evaluator:
+    schema: dbtevaluator

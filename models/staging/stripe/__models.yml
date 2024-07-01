@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: Table with stripe payments
+    columns:
+      - name: PAYMENT_ID
+        description: The unique key for each payment
+        data_tests:
+          - not_null
