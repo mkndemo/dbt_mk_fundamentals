@@ -4,15 +4,15 @@ sources:
   - name: stripe
     description: Stripe payment log
     database: analytics
+    schema: raw_stripe
     freshness: 
       error_after:
-        count: 2
-        period: day
-      warn_after:
         count: 1
         period: day
+      warn_after:
+        count: 2
+        period: hour
     loaded_at_field: _BATCHED_AT
-    schema: raw_stripe
     tables:
       - name: raw_payment
         description: records for payments with method, payment id and orderid as reference 

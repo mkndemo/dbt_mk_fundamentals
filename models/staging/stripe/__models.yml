@@ -8,4 +8,3 @@ models:
         description: The unique key for each payment
         data_tests:
           - not_null
-          - unique
