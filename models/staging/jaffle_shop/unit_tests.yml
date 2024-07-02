@@ -1,0 +1,16 @@
+unit_tests:
+  - name: test_is_valid_email
+    description: Test the tax calculation field paid tax
+    model: stg_customers
+    given:
+      - input: source('raw_jaffle_shop', 'raw_customers')
+        rows:
+          - { email: lasse.andersson@gmail.com }
+          - { email: carl.nilsson.com }
+          - { email: lasse.andersson@noemailcom }
+        
+    expect:
+      rows:
+        - { email: lasse.andersson@gmail.com, email_valid: true }
+        - { email: carl.nilsson.com, email_valid: false }
+        - { email: lasse.andersson@noemailcom, email_valid: true }

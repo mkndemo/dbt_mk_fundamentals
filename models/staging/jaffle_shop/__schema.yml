@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: jaffle_shop
+  - name: raw_jaffle_shop
     database: analytics
     schema: raw_jaffle_shop
     tables:
