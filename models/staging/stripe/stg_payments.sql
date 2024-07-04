@@ -1,6 +1,6 @@
 {{
     config(
-        materialized='incremental'
+        materialized='table'
     )
 }}
 
@@ -8,9 +8,9 @@ with events as (
     select * 
     from {{ source('stripe', 'raw_payment') }}
 
-    {% if is_incremental() %}
-    where _batched_at >= (select top 1 _batched_at from {{this}} order by _batched_at desc )
-    {% endif %}
+  --  {% if is_incremental() %}
+  --  where _batched_at >= (select top 1 _batched_at from {{this}} order by _batched_at desc )
+  --  {% endif %}
 ),
 
 final as (
