@@ -3,7 +3,7 @@ default:
   outputs:
     dev:
       type: snowflake
-      account: suka.test
+      account: cb11892.west-europe.azure
       # User/password auth
       user: 92736ah3AG
       password: "{{ env_var('PASSWORD') }}"
