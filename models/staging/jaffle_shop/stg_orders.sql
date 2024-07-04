@@ -27,7 +27,8 @@ renamed as (
         (tax_paid / 100.0) as tax_paid,
 
         ---------- timestamps
-        ordered_at
+        ordered_at,
+        'test' as test
 
     from source
 
