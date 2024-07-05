@@ -34,5 +34,5 @@ models:
   dbt_project_evaluator:
     schema: dbtevaluator
 
-tests:
+data_tests:
   +severity: "{{ env_var('DBT_PROJECT_EVALUATOR_SEVERITY', 'warn') }}"
