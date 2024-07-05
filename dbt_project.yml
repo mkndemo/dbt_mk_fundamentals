@@ -33,3 +33,6 @@ models:
       +materialized: table
   dbt_project_evaluator:
     schema: dbtevaluator
+
+tests:
+  +severity: "{{ env_var('DBT_PROJECT_EVALUATOR_SEVERITY', 'warn') }}"
