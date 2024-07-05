@@ -5,7 +5,7 @@ select
     first_name as givenname,
     first_order_date,
     order_count,
-    true as one,
+    true as two,
     total_lifetime_value,
     round(amount/100.0,2) as order_value_dollars,
     orders.status as order_status,
