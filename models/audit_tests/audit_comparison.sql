@@ -1,3 +1,4 @@
+
 {% set old_fct_orders_query %}
 select
     *
