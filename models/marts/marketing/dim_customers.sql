@@ -10,7 +10,7 @@ orders as (
 
 order_items as (
 
-    select * from {{ ref('order_items') }}
+    select * from {{ ref('fct_order_items') }}
 ),
 
 order_summary as (

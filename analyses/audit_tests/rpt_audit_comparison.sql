@@ -1,7 +1,8 @@
+
 {% set old_fct_orders_query %}
 select
     *
-from {{ ref('customer_orders') }}
+from {{ ref('rpt_customer_orders') }}
 {% endset %}
 
 
