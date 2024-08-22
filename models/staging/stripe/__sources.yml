@@ -2,13 +2,14 @@ version: 2
 
 sources:
   - name: stripe
-    database: raw
+    database: SA_MKN_SANDBOX
     schema: stripe
     tables:
       - name: payment
   - name: jaffle_shop
-    database: raw
+    database: SA_MKN_SANDBOX
     schema: jaffle_shop
     tables: 
       - name: orders
       - name: customers
+      
