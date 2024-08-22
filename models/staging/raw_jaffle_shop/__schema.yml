@@ -2,8 +2,8 @@ version: 2
 
 sources:
   - name: raw_jaffle_shop
-    database: analytics
-    schema: raw_jaffle_shop
+    database: SA_MKN_SANDBOX
+    schema: jaffle_shop
     tables:
       - name: raw_customers
       - name: raw_orders

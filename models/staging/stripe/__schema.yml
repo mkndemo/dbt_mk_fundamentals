@@ -3,8 +3,8 @@ version: 2
 sources:
   - name: stripe
     description: Stripe payment log
-    database: analytics
-    schema: raw_stripe
+    database: SA_MKN_SANDBOX
+    schema: stripe
     freshness: 
       error_after:
         count: 1
